@@ -119,7 +119,7 @@ export default {
     },
     //退出登录的按钮的回调
     logout(){
-       //派遣action退出登录
+       //派遣action退出
        this.$store.dispatch('logout');
     }
   },

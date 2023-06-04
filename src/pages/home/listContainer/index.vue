@@ -6,11 +6,7 @@
         <div class="swiper-container" ref="mySwiper">
           <!-- swiper-wrapper里面每一个slider即为一张图片 -->
           <div class="swiper-wrapper">
-            <div
-              class="swiper-slide"
-              v-for="(item, index) in bannerList"
-              :key="item.id"
-            >
+            <div class="swiper-slide" v-for="(item, index) in bannerList" :key="item.id">
               <img :src="item.imgUrl" />
             </div>
           </div>

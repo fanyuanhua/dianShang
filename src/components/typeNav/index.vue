@@ -9,49 +9,25 @@
           <div class="sort" v-show="show">
             <div class="all-sort-list2">
               <!--一级分类地盘-->
-              <div
-                class="item"
-                v-for="(c1, index) in category"
-                :key="c1.categoryId"
-              >
-                <h3
-                  @mouseenter="enterHandler(index, $event)"
-                  :class="{ active: currentIndex == index }"
-                >
-                  <a
-                    :data-categoryName="c1.categoryName"
-                    :data-category1Id="c1.categoryId"
-                    >{{ c1.categoryName }}</a
-                  >
+              <div class="item" v-for="(c1, index) in category" :key="c1.categoryId">
+                <h3 @mouseenter="enterHandler(index, $event)" :class="{ active: currentIndex == index }">
+                  <a :data-categoryName="c1.categoryName" :data-category1Id="c1.categoryId">{{ c1.categoryName }}</a>
                 </h3>
                 <!-- 通过JS实现动态行内样式，进行二级、三级分类的显示与隐藏(display:none|block切换的) -->
-                <div
-                  class="item-list clearfix"
-                  :style="{ display: currentIndex == index ? 'block' : 'none' }"
-                >
+                <div class="item-list clearfix" :style="{ display: currentIndex == index ? 'block' : 'none' }">
                   <!-- :style="{ display: currentIndex == index ? 'block' : 'none' }" -->
                   <!--二级分类-->
-                  <div
-                    class="subitem"
-                    v-for="c2 in c1.categoryChild"
-                    :key="c2.categoryId"
-                  >
+                  <div class="subitem" v-for="c2 in c1.categoryChild" :key="c2.categoryId">
                     <dl class="fore">
                       <dt>
-                        <a
-                          :data-categoryName="c2.categoryName"
-                          :data-category2Id="c2.categoryId"
-                          >{{ c2.categoryName }}</a
-                        >
+                        <a :data-categoryName="c2.categoryName" :data-category2Id="c2.categoryId">{{ c2.categoryName
+                        }}</a>
                       </dt>
                       <dd>
                         <!--三级分类-->
                         <em v-for="c3 in c2.categoryChild" :key="c3.categoryId">
-                          <a
-                            :data-categoryName="c3.categoryName"
-                            :data-category3Id="c3.categoryId"
-                            >{{ c3.categoryName }}</a
-                          >
+                          <a :data-categoryName="c3.categoryName" :data-category3Id="c3.categoryId">{{ c3.categoryName
+                          }}</a>
                         </em>
                       </dd>
                     </dl>
@@ -234,6 +210,7 @@ export default {
       z-index: 999;
       transition: all 0.3s;
       overflow: hidden;
+
       .all-sort-list2 {
         .item {
           h3 {
@@ -306,6 +283,7 @@ export default {
               }
             }
           }
+
           /*温馨提示:豪哥不想利用样式控制二级、三级分类显示与隐藏,下面的代码进行注释*/
           /* &:hover {
             .item-list {

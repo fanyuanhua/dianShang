@@ -21,29 +21,29 @@ Vue.component(Footer.name, Footer);
 Vue.component(TypeNav.name, TypeNav)
 Vue.component(Pagination.name, Pagination)
 Vue.component(HintButton.name, HintButton);
-/*
-底下的写法目前是全部引入
-完整引入element-ui组件库,可以使用任意UI组件【都是全局组件】
+
+// 底下的写法目前是全部引入
+// 完整引入element-ui组件库,可以使用任意UI组件【都是全局组件】
 //引入elementUI插件
 import ElementUI from 'element-ui';
 //引入element样式
 import 'element-ui/lib/theme-chalk/index.css';
 //安装使用elementUI插件
 Vue.use(ElementUI);
-*/
-//按需引入
-import { Button, Row, Col, MessageBox, Message, Input } from 'element-ui';
-//element-ui大多数组件，注册为全局组件Vue.component|Vue.use
-Vue.use(Button);
-Vue.use(Row);
-Vue.use(Col);
-Vue.use(Input)
-//按需引入写法不同的:MessageBox、Message、Loading、Notification
-Vue.prototype.$msgbox = MessageBox;
-//消息提示框
-Vue.prototype.$alert = MessageBox.alert;
 
-Vue.prototype.$message = Message;
+// //按需引入
+// import { Button, Row, Col, MessageBox, Message, Input } from 'element-ui';
+// //element-ui大多数组件，注册为全局组件Vue.component|Vue.use
+// Vue.use(Button);
+// Vue.use(Row);
+// Vue.use(Col);
+// Vue.use(Input)
+// //按需引入写法不同的:MessageBox、Message、Loading、Notification
+// Vue.prototype.$msgbox = MessageBox;
+// //消息提示框
+// Vue.prototype.$alert = MessageBox.alert;
+
+// Vue.prototype.$message = Message;
 //测试获取数据
 // import { reqCategory } from '@/api';
 // console.log('入口文件地方',reqCategory());

@@ -18,6 +18,10 @@ import MyOrder from '@/pages/center/myOrder';
 import TeamOrder from '@/pages/center/teamOrder'
 export default [
     {
+        path:'/ceshi',
+        component:()=>import('@/pages/home/ceshi')
+    },
+    {
         path: '/home',
         name: 'erha',
         component: ()=> import('@/pages/home'),
